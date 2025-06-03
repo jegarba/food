@@ -147,19 +147,6 @@ nav {
     position: relative;
 }
 
-.brand-name::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    background: var(--negro-carbon);
-    border-radius: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-}
-
 .hero-tagline {
     font-size: 1.8rem;
     font-weight: 300;
@@ -284,6 +271,108 @@ nav {
     margin-bottom: 1.5rem;
 }
 
+/* Logo Variations */
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.logo-variant {
+    background: rgba(255, 241, 230, 0.05);
+    border: 1px solid rgba(212, 163, 115, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.logo-variant:hover {
+    transform: translateY(-5px);
+    border-color: var(--dorado-bronceado);
+}
+
+.logo-demo {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+.logo-demo.dark {
+    background: var(--negro-carbon);
+}
+
+.logo-demo.light {
+    background: var(--beige-arena);
+}
+
+.logo-demo.mono {
+    background: #333;
+}
+
+.logo-primary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.logo-primary.light {
+    color: var(--negro-carbon);
+}
+
+.logo-primary.dark {
+    color: var(--dorado-bronceado);
+}
+
+.logo-primary.mono {
+    color: white;
+}
+
+.mini-flame {
+    font-size: 1.5rem;
+    color: var(--rojo-anaranjado);
+}
+
+.mini-flame.light {
+    color: var(--rojo-anaranjado);
+}
+
+.mini-flame.mono {
+    color: white;
+}
+
+.isotipo-only {
+    width: 60px;
+    height: 60px;
+    border: 4px solid var(--dorado-bronceado);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--rojo-anaranjado);
+    background: radial-gradient(circle, rgba(242, 92, 84, 0.1) 0%, transparent 70%);
+}
+
+.isotipo-only.light {
+    border-color: var(--negro-carbon);
+    background: rgba(28, 28, 28, 0.1);
+}
+
+.isotipo-only.mono {
+    border-color: white;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
 /* Color Palette */
 .color-palette {
     display: grid;
@@ -310,7 +399,6 @@ nav {
     border-radius: 50%;
     margin: 0 auto 1rem;
     border: 3px solid rgba(255, 255, 255, 0.1);
-    position: relative;
 }
 
 .color-name {
@@ -325,9 +413,9 @@ nav {
     font-size: 0.9rem;
 }
 
-/* Typography Section */
+/* Typography */
 .typography-showcase {
-    margin-top: 4rem;
+    margin: 2rem 0 0 0;
     text-align: center;
 }
 
@@ -350,6 +438,86 @@ nav {
     color: var(--beige-arena);
 }
 
+/* Versatility Examples */
+.versatility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.use-case {
+    background: rgba(255, 241, 230, 0.05);
+    border: 1px solid rgba(212, 163, 115, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.use-case:hover {
+    transform: translateY(-5px);
+    border-color: var(--dorado-bronceado);
+}
+
+.use-case-demo {
+    height: 100px;
+    background: var(--gris-humo);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: var(--dorado-bronceado);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--rojo-anaranjado);
+}
+
+.uniform-mockup {
+    width: 60px;
+    height: 80px;
+    background: var(--negro-carbon);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.uniform-logo {
+    font-size: 0.8rem;
+    color: var(--dorado-bronceado);
+    font-weight: 900;
+}
+
+.package-mockup {
+    width: 70px;
+    height: 60px;
+    background: var(--beige-arena);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.package-logo {
+    font-size: 1rem;
+    color: var(--negro-carbon);
+    font-weight: 900;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .nav-links {
@@ -368,7 +536,7 @@ nav {
         font-size: 2rem;
     }
     
-    .brand-grid {
+    .brand-grid, .logo-grid {
         grid-template-columns: 1fr;
     }
     
@@ -409,4 +577,212 @@ nav {
 .scroll-reveal.revealed {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* --- Variaciones de Logo (Logo Variations Section) --- */
+.logo-card {
+    background: rgba(255, 241, 230, 0.05);
+    border: 1px solid rgba(212, 163, 115, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.logo-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--dorado-bronceado);
+    box-shadow: 0 10px 30px rgba(212, 163, 115, 0.1);
+}
+
+.logo-card-display {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
+}
+
+.logo-card-display.dark { background: var(--negro-carbon); }
+.logo-card-display.light { background: var(--beige-arena); }
+.logo-card-display.gradient { background: linear-gradient(135deg, #2a2a2a 0%, var(--negro-carbon) 100%); }
+.logo-card-display.white { background: white; }
+.logo-card-display.red { background: var(--rojo-anaranjado); }
+
+.logo-hungry, .logo-horizontal { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1rem; 
+}
+
+.logo-horizontal { flex-direction: row; }
+
+.stopwatch-container { 
+    position: relative; 
+    width: 100px; 
+    height: 100px; 
+}
+
+.stopwatch-body { 
+    width: 80px; 
+    height: 80px; 
+    border: 6px solid var(--dorado-bronceado); 
+    border-radius: 50%; 
+    position: absolute; 
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background: transparent; 
+}
+
+.stopwatch-crown { 
+    width: 16px; 
+    height: 20px; 
+    background: var(--dorado-bronceado); 
+    border-radius: 8px 8px 4px 4px; 
+    position: absolute; 
+    top: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+/* Vástago que conecta la corona con el cuerpo */
+/* .stopwatch-crown::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 12px;
+    background: linear-gradient(180deg, var(--dorado-bronceado) 0%, rgba(212, 163, 115, 0.8) 100%);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3),
+                0 1px 3px rgba(0, 0, 0, 0.2);
+} */
+
+/* Anillo superior de la corona para mayor realismo */
+.stopwatch-crown::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 1.5px;
+}
+
+.logo-card .flame-icon { 
+    font-size: 2.5rem; 
+    color: var(--rojo-anaranjado); 
+    filter: drop-shadow(0 0 10px rgba(242, 92, 84, 0.5)); 
+    transition: transform 0.3s ease; 
+}
+
+.brand-text { 
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 900; 
+    font-size: 2.5rem; 
+    color: var(--dorado-bronceado); 
+    letter-spacing: 0.05em; 
+}
+
+.logo-horizontal .stopwatch-container {
+    width: 80px;
+    height: 80px;
+}
+
+.logo-horizontal .stopwatch-body {
+    width: 64px;
+    height: 64px;
+    border-width: 5px;
+}
+
+.logo-horizontal .stopwatch-crown {
+    width: 12px;
+    height: 15px;
+}
+
+.logo-horizontal .flame-icon {
+    font-size: 2rem;
+}
+
+.logo-horizontal .brand-text {
+    font-size: 2rem;
+}
+
+.logo-light .stopwatch-body { border-color: var(--negro-carbon); }
+.logo-light .stopwatch-crown, .logo-light .stopwatch-crown::before { background: var(--negro-carbon); }
+.logo-light .stopwatch-crown::before { 
+    background: linear-gradient(180deg, var(--negro-carbon) 0%, rgba(28, 28, 28, 0.8) 100%); 
+}
+.logo-light .brand-text { color: var(--negro-carbon); }
+
+.logo-white .stopwatch-body { border-color: white; }
+.logo-white .stopwatch-crown, .logo-white .stopwatch-crown::before { background: white; }
+.logo-white .stopwatch-crown::before { 
+    background: linear-gradient(180deg, white 0%, rgba(255, 255, 255, 0.8) 100%); 
+}
+.logo-white .brand-text { color: white; }
+.logo-white .flame-icon { color: white; filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); }
+
+.logo-minimal .stopwatch-body { border-color: var(--gris-humo); }
+.logo-minimal .stopwatch-crown, .logo-minimal .stopwatch-crown::before { background: var(--gris-humo); }
+.logo-minimal .stopwatch-crown::before { 
+    background: linear-gradient(180deg, var(--gris-humo) 0%, rgba(124, 124, 124, 0.8) 100%); 
+}
+.logo-minimal .brand-text { color: var(--gris-humo); }
+.logo-minimal .flame-icon { color: var(--gris-humo); filter: none; }
+
+.isotipo-small .stopwatch-container { width: 60px; height: 60px; }
+.isotipo-small .stopwatch-body { width: 48px; height: 48px; border-width: 4px; }
+.isotipo-small .stopwatch-crown { width: 10px; height: 12px; }
+.logo-card .isotipo-small .flame-icon { font-size: 1.5rem; }
+.logo-minimal .logo-card .flame-icon { color: var(--gris-humo); filter: none; }
+
+.download-section { 
+    background: rgba(255, 241, 230, 0.05); 
+    border: 1px solid rgba(212, 163, 115, 0.2); 
+    border-radius: 20px; 
+    padding: 2rem; 
+    margin-top: 3rem; 
+    text-align: center; 
+}
+
+.download-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 1rem; 
+    margin-top: 1.5rem; 
+}
+
+.download-btn { 
+    background: linear-gradient(45deg, var(--rojo-anaranjado), var(--dorado-bronceado)); 
+    color: var(--negro-carbon); 
+    padding: 1rem 1.5rem; 
+    border: none; 
+    border-radius: 10px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    text-decoration: none; 
+    display: inline-block; 
+}
+
+.download-btn:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 10px 20px rgba(242, 92, 84, 0.3); 
+}
+
+.hidden-canvas { 
+    position: absolute; 
+    left: -9999px; 
+    top: -9999px; 
 } 
