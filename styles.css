@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --negro-carbon: #1C1C1C;
+    --dorado-bronceado: #D4A373;
+    --rojo-anaranjado: #F25C54;
+    --beige-arena: #FFF1E6;
+    --gris-humo: #7C7C7C;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--negro-carbon);
+    color: var(--beige-arena);
+    overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(28, 28, 28, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--dorado-bronceado);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--beige-arena);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-links a:hover {
+    color: var(--dorado-bronceado);
+}
+
+/* Landing Section */
+.landing {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--negro-carbon) 0%, #2a2a2a 100%);
+    overflow: hidden;
+}
+
+.landing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(242, 92, 84, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 163, 115, 0.1) 0%, transparent 50%);
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.logo-display {
+    margin-bottom: 3rem;
+    animation: logoFloat 3s ease-in-out infinite;
+}
+
+.logo-circle {
+    width: 200px;
+    height: 200px;
+    border: 8px solid var(--dorado-bronceado);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    position: relative;
+    background: radial-gradient(circle, rgba(242, 92, 84, 0.1) 0%, transparent 70%);
+    box-shadow: 0 0 50px rgba(212, 163, 115, 0.3);
+}
+
+.logo-circle::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 20px;
+    background: var(--dorado-bronceado);
+    border-radius: 8px 8px 4px 4px;
+}
+
+.flame-icon {
+    font-size: 4rem;
+    color: var(--rojo-anaranjado);
+    animation: flameFlicker 2s ease-in-out infinite alternate;
+    text-shadow: 0 0 20px rgba(242, 92, 84, 0.8);
+}
+
+.brand-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 4rem;
+    color: var(--dorado-bronceado);
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 30px rgba(212, 163, 115, 0.5);
+    position: relative;
+}
+
+.brand-name::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background: var(--negro-carbon);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.hero-tagline {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin: 2rem 0;
+    color: var(--beige-arena);
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--gris-humo);
+    font-weight: 400;
+    opacity: 0;
+    animation: fadeInUp 1s ease 1s forwards;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(45deg, var(--rojo-anaranjado), var(--dorado-bronceado));
+    color: var(--negro-carbon);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 1s ease 1.5s forwards;
+    box-shadow: 0 10px 30px rgba(242, 92, 84, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(242, 92, 84, 0.4);
+}
+
+/* Branding Section */
+.branding-section {
+    min-height: 100vh;
+    padding: 6rem 2rem;
+    background: linear-gradient(180deg, var(--negro-carbon) 0%, #0f0f0f 100%);
+}
+
+.section-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--dorado-bronceado);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(45deg, var(--rojo-anaranjado), var(--dorado-bronceado));
+    border-radius: 2px;
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.brand-card {
+    background: rgba(255, 241, 230, 0.05);
+    border: 1px solid rgba(212, 163, 115, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, var(--rojo-anaranjado), var(--dorado-bronceado));
+}
+
+.brand-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(212, 163, 115, 0.1);
+    border-color: var(--dorado-bronceado);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--rojo-anaranjado);
+    margin-bottom: 1.5rem;
+}
+
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--dorado-bronceado);
+    margin-bottom: 1rem;
+}
+
+.card-description {
+    color: var(--beige-arena);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Color Palette */
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.color-item {
+    text-align: center;
+    background: rgba(255, 241, 230, 0.05);
+    border-radius: 15px;
+    padding: 2rem 1rem;
+    transition: transform 0.3s ease;
+}
+
+.color-item:hover {
+    transform: scale(1.05);
+}
+
+.color-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.color-name {
+    font-weight: 600;
+    color: var(--beige-arena);
+    margin-bottom: 0.5rem;
+}
+
+.color-hex {
+    font-family: 'Courier New', monospace;
+    color: var(--gris-humo);
+    font-size: 0.9rem;
+}
+
+/* Typography Section */
+.typography-showcase {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.font-display {
+    margin: 2rem 0;
+}
+
+.font-primary {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 4rem;
+    color: var(--dorado-bronceado);
+    margin-bottom: 1rem;
+}
+
+.font-secondary {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--beige-arena);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .brand-name {
+        font-size: 2.5rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1.4rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .brand-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .font-primary {
+        font-size: 2.5rem;
+    }
+}
+
+/* Animations */
+@keyframes logoFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes flameFlicker {
+    0% { transform: scale(1) rotate(-2deg); }
+    100% { transform: scale(1.1) rotate(2deg); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll animations */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+} 
